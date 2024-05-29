@@ -133,7 +133,7 @@ public class GameController {
         if (firstPlayerTurn) {
             defense(player1);
 
-            firstPlayerTurn = false;
+            changeActivePlayer();
             updateButtonStates();
         }
     }
@@ -141,7 +141,7 @@ public class GameController {
     @FXML
     private void onPlayer2Defense() {
         if (!firstPlayerTurn) {
-            defense(player1);
+            defense(player2);
 
             changeActivePlayer();
             updateTurnCounter();
@@ -151,36 +151,32 @@ public class GameController {
 
     @FXML
     private void onPlayer1Potion() {
-        if (firstPlayerTurn) {
-            if (!player1.getUsedPotion()) {
-                combatLog.add("Turn " + turnCounter + ": " + "Player 1 drink a potion");
-                updateCombatLog(); // Update attack log
+        if (firstPlayerTurn && !player1.getUsedPotion()) {
+            combatLog.add("Turn " + turnCounter + ": " + "Player 1 drink a potion");
+            updateCombatLog();
 
-                player1.usePotion();
+            player1.usePotion();
 
-                updateHealthFields();
+            updateHealthFields();
 
-                changeActivePlayer();
-                updateButtonStates();
-            }
+            changeActivePlayer();
+            updateButtonStates();
         }
     }
 
     @FXML
     private void onPlayer2Potion() {
-        if (!firstPlayerTurn) {
-            if (!player2.getUsedPotion()) {
-                combatLog.add("Turn " + turnCounter + ": " + "Player 2 drink a potion");
-                updateCombatLog(); // Update attack log
-                updateTurnCounter();
+        if (!firstPlayerTurn && !player2.getUsedPotion()) {
+            combatLog.add("Turn " + turnCounter + ": " + "Player 2 drink a potion");
+            updateCombatLog();
+            updateTurnCounter();
 
-                player2.usePotion();
+            player2.usePotion();
 
-                updateHealthFields();
+            updateHealthFields();
 
-                changeActivePlayer();
-                updateButtonStates();
-            }
+            changeActivePlayer();
+            updateButtonStates();
         }
     }
 
@@ -286,7 +282,7 @@ public class GameController {
     private void showEndOfGameDialog(String winner) {
 
         Stage dialogStage = new Stage();
-        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        dialogStage.initModality(Modality.APPLICATION_MODAL);  //felugró ablak
         dialogStage.setTitle("End of Game");
 
 

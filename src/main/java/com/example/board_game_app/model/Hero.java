@@ -22,9 +22,9 @@ public class Hero {
 
     private double health;
 
-    private Boolean usedPotion = Boolean.FALSE;
+    private Boolean usedPotion = false;
 
-    private Boolean isDefending = Boolean.FALSE;
+    private Boolean isDefending = false;
 
     private List<Weapon> weapons;
 
@@ -38,10 +38,8 @@ public class Hero {
         int sumMinDamage = weapons.stream().mapToInt(Weapon::getMinDamage).sum();
         int sumMaxDamage = weapons.stream().mapToInt(Weapon::getMaxDamage).sum();
 
-        return Damage.builder()
-                .minDamage(sumMinDamage)
-                .maxDamage(sumMaxDamage).
-                build();
+        return new Damage(sumMinDamage, sumMaxDamage);
+
     }
 
     public void usePotion() {
