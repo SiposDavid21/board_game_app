@@ -35,20 +35,20 @@
                 </image>
             </ImageView>
         </graphic></Button>
-    <TextField fx:id="player2HealthField" editable="false" layoutX="564.0" layoutY="122.0" />
+    <TextField fx:id="player2HealthField" editable="false" layoutX="564.0" layoutY="122.0" style="-fx-background-color: green;" />
     <Label layoutX="492.0" layoutY="126.0" text="Health:">
         <font>
             <Font name="Book Antiqua Bold" size="14.0" />
         </font>
     </Label>
-    <TextField fx:id="player1DamageField" editable="false" layoutX="117.0" layoutY="163.0" prefHeight="25.0" prefWidth="149.0" />
+    <TextField fx:id="player1DamageField" editable="false" layoutX="117.0" layoutY="163.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: orange;" />
     <Label layoutX="487.0" layoutY="167.0" text="Damage:">
         <font>
             <Font name="Book Antiqua Bold" size="14.0" />
         </font>
     </Label>
-    <TextField fx:id="player2DamageField" editable="false" layoutX="564.0" layoutY="163.0" />
-    <TextField fx:id="player1HealthField" editable="false" layoutX="117.0" layoutY="122.0" prefHeight="25.0" prefWidth="149.0" />
+    <TextField fx:id="player2DamageField" editable="false" layoutX="564.0" layoutY="163.0" style="-fx-background-color: orange;" />
+    <TextField fx:id="player1HealthField" editable="false" layoutX="117.0" layoutY="122.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: green;" />
     <Label layoutX="49.0" layoutY="126.0" text="Health:">
         <font>
             <Font name="Book Antiqua Bold" size="14.0" />
@@ -64,7 +64,7 @@
             <Font name="Book Antiqua Bold" size="14.0" />
         </font>
     </Label>
-    <Button fx:id="player1PotionButton" layoutX="155.0" layoutY="215.0" onAction="#onPlayer1Potion" mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: #FF6347; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+    <Button fx:id="player1PotionButton" layoutX="155.0" layoutY="215.0" mnemonicParsing="false" onAction="#onPlayer1Potion" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: #FF6347; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
         <graphic>
             <ImageView fitHeight="50.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -73,7 +73,7 @@
             </ImageView>
         </graphic>
     </Button>
-    <Button fx:id="player2PotionButton" layoutX="530.0" layoutY="215.0" onAction="#onPlayer2Potion" mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: #FF6347; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
+    <Button fx:id="player2PotionButton" layoutX="530.0" layoutY="215.0" mnemonicParsing="false" onAction="#onPlayer2Potion" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: #FF6347; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;">
         <graphic>
             <ImageView fitHeight="50.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                 <image>
