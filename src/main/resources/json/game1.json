@@ -1,0 +1,104 @@
+[
+  {
+    "id": "player_00001",
+    "name": "Geralt",
+    "health": 350,
+    "characterClass": "WARRIOR",
+    "level": 1,
+    "armors": [
+      {
+        "id": "item_12102",
+        "name": "Chest",
+        "armor": 250
+      }
+    ],
+    "weapons": [
+      {
+        "id": "item_12102",
+        "name": "Sword",
+        "minDamage": 12,
+        "maxDamage": 25
+      },
+      {
+        "id": "item_14123",
+        "name": "Silver Sword",
+        "minDamage": 12,
+        "maxDamage": 25
+      }
+    ]
+  },
+  {
+    "id": "player_00002",
+    "name": "Gandalf",
+    "health": 230,
+    "characterClass": "MAGE",
+    "level": 1,
+    "armors": [
+      {
+        "id": "item_10003",
+        "name": "Robe",
+        "armor": 170
+      }
+    ],
+    "weapons": [
+      {
+        "id": "item_10003",
+        "name": "Staff",
+        "minDamage": 40,
+        "maxDamage": 60
+      }
+    ]
+  },
+  {
+    "id": "player_00003",
+    "name": "Legolas",
+    "health": 290,
+    "characterClass": "HUNTER",
+    "level": 1,
+    "armors": [
+      {
+        "id": "item_12102",
+        "name": "Chest",
+        "armor": 195
+      }
+    ],
+    "weapons": [
+      {
+        "id": "item_12112",
+        "name": "Bow",
+        "minDamage": 27,
+        "maxDamage": 70
+      }
+    ]
+  },
+  {
+    "id": "player_00004",
+    "name": "Gimli",
+    "health": 380,
+    "level": 1,
+    "characterClass": "WARRIOR",
+
+    "armors": [
+      {
+        "id": "item_10003",
+        "name": "Chest",
+        "armor": 270
+      },
+      {
+        "id": "item_10017",
+        "name": "Helm",
+        "armor": 45
+      }
+    ],
+    "weapons": [
+      {
+        "id": "item_12110",
+        "name": "Axe",
+        "minDamage": 15,
+        "maxDamage": 77
+      }
+    ]
+  }
+]
+
+
