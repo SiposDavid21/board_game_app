@@ -2,6 +2,8 @@ package com.example.board_game_app;
 
 import com.example.board_game_app.model.Hero;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.util.DefaultIndenter;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -76,11 +78,11 @@ public class GameController {
 
     @FXML
     private void initialize() {
-        // Read JSON file and map/convert to a list of Hero objects
+
         ObjectMapper objectMapper = new ObjectMapper();
         List<Hero> heroes;
         try {
-            heroes = objectMapper.readValue(new File("src/main/resources/json/game1.json"), new TypeReference<>() {
+            heroes = objectMapper.readValue(getClass().getResource("/json/game1.json"), new TypeReference<>() {
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -101,6 +103,7 @@ public class GameController {
 
             if (player2.getHealth() <= 0) {
                 showEndOfGameDialog(player1.getName() + " is the winner!");
+                generateInput(player1);
             } else {
                 changeActivePlayer();
                 updateButtonStates();
@@ -115,6 +118,7 @@ public class GameController {
 
             if (player1.getHealth() <= 0) {
                 showEndOfGameDialog(player2.getName() + " is the winner!");
+                generateInput(player2);
             } else {
                 changeActivePlayer();
                 updateButtonStates();
@@ -148,7 +152,7 @@ public class GameController {
     @FXML
     private void onPlayer1Potion() {
         if (firstPlayerTurn) {
-            if (player1.getUsedPotion() == Boolean.FALSE) {
+            if (!player1.getUsedPotion()) {
                 combatLog.add("Turn " + turnCounter + ": " + "Player 1 drink a potion");
                 updateCombatLog(); // Update attack log
 
@@ -165,7 +169,7 @@ public class GameController {
     @FXML
     private void onPlayer2Potion() {
         if (!firstPlayerTurn) {
-            if (player2.getUsedPotion() == Boolean.FALSE) {
+            if (!player2.getUsedPotion()) {
                 combatLog.add("Turn " + turnCounter + ": " + "Player 2 drink a potion");
                 updateCombatLog(); // Update attack log
                 updateTurnCounter();
@@ -275,7 +279,7 @@ public class GameController {
     private void updateCombatLog() {
         combatLogListView.getItems().clear();
         combatLogListView.getItems().addAll(combatLog);
-        // Scroll to the bottom
+
         combatLogListView.scrollTo(combatLog.size() - 1);
     }
 
@@ -311,6 +315,19 @@ public class GameController {
 
 
         dialogStage.showAndWait();
+    }
+    private void generateInput(Hero winner) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
+        prettyPrinter.indentArraysWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
+        objectMapper.setDefaultPrettyPrinter(prettyPrinter);
+
+        try {
+            combatLog.add(winner.getName() + " level up!");
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("./combatLog.json"), combatLog);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
