@@ -1,6 +1,6 @@
-package com.example.board_game_app;
+package com.example.roleplay_app;
 
-import com.example.board_game_app.model.Hero;
+import com.example.roleplay_app.model.Hero;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;

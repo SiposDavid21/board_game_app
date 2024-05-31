@@ -1,4 +1,4 @@
-package com.example.board_game_app.model;
+package com.example.roleplay_app.model;
 
 import lombok.*;
 

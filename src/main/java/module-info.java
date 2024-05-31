@@ -5,8 +5,8 @@ module com.example.javafxgame {
     requires static lombok;
     requires com.fasterxml.jackson.databind;
 
-    opens com.example.board_game_app to javafx.fxml;
-    exports com.example.board_game_app;
-    exports com.example.board_game_app.model;
-    opens com.example.board_game_app.model to javafx.fxml;
+    opens com.example.roleplay_app to javafx.fxml;
+    exports com.example.roleplay_app;
+    exports com.example.roleplay_app.model;
+    opens com.example.roleplay_app.model to javafx.fxml;
 }

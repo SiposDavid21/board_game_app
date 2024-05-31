@@ -1,4 +1,4 @@
-package com.example.board_game_app;
+package com.example.roleplay_app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

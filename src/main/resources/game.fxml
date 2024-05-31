@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane pickOnBounds="false" prefHeight="563.0" prefWidth="767.0" style="-fx-background-color: grey; -fx-border-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.board_game_app.GameController">
+<AnchorPane pickOnBounds="false" prefHeight="563.0" prefWidth="767.0" style="-fx-background-color: grey; -fx-border-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.roleplay_app.GameController">
     <ScrollPane layoutX="10.0" layoutY="442.0" prefHeight="107.0" prefWidth="748.0">
         <ListView fx:id="combatLogListView" prefHeight="105.0" prefWidth="738.0" />
     </ScrollPane>

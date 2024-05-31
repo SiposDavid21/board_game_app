@@ -1,4 +1,4 @@
-package com.example.board_game_app.model;
+package com.example.roleplay_app.model;
 
 import lombok.*;
 
@@ -8,13 +8,11 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weapon {
+public class Armor {
 
     private String id;
 
     private String name;
 
-   private int minDamage;
-
-   private int maxDamage;
+    private int armor;
 }
